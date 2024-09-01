@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.SpringBootEnglishWordApp.Mapper.UserMapper">
+    <select id="getUser" resultType="com.cn.SpringBootEnglishWordApp.Pojo.User">
+        select * from user where username = #{username};
+    </select>
+    <update id="updateUsername">
+        update user set username = #{name} where username = #{username};
+    </update>
+    <update id="updatePassword">
+        update user set password = #{word} where username = #{username};
+    </update>
+    <update id="updateEmail">
+        update user set email = #{mail} where username = #{username};
+    </update>
+    <update id="updateContent">
+        update user set content = #{tent} where username = #{username};
+    </update>
+    <select id="getId" resultType="Integer">
+        select user.id from user where username = #{username};
+    </select>
+</mapper>

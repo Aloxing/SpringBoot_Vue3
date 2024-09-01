@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.SpringBootEnglishWordApp.Mapper.UsingWordMapper">
+    <insert id="insertUsing">
+        insert into usingw (id,word,translate,using_time)
+        values (#{id},#{word},#{translate},#{usingTime});
+    </insert>
+    <select id="getUsing" resultType="com.cn.SpringBootEnglishWordApp.Pojo.UsingWord">
+        select * from usingw where id = #{id}; 
+    </select>
+    <delete id="deleteUsing">
+        delete from usingw where id = #{id} and word = #{word} and using_time = #{usingTime};
+    </delete>
+</mapper>

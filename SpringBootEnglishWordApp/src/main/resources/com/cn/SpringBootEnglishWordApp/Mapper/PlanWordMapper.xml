@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.SpringBootEnglishWordApp.Mapper.PlanWordMapper">
+    <select id="getPlanWords" resultType="com.cn.SpringBootEnglishWordApp.Pojo.PlanWord">
+        select * from plan where id = #{id};
+    </select>
+    <insert id="postPlan">
+        insert into plan(id,word,translate,create_time)
+        values(#{id},#{word},#{translate},#{createTime});
+    </insert>
+    <delete id="deletePlan">
+        delete from plan where id = #{id} and word = #{word} and create_time = #{createTime};
+    </delete>
+</mapper>

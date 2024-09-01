@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.SpringBootEnglishWordApp.Mapper.MasterWordMapper">
+    <select id="getMasterWords" resultType="com.cn.SpringBootEnglishWordApp.Pojo.MasterWord">
+        select * from master where id = #{id};
+    </select>
+    <delete id="deleteMaster">
+        delete from master where id = #{id} and word = #{word} and create_time = #{createTime};
+    </delete>
+    <insert id="insertMaster">
+        insert into master (id,word,translate,create_time)
+        values (#{id},#{word},#{translate},#{createTime});
+    </insert>
+</mapper>

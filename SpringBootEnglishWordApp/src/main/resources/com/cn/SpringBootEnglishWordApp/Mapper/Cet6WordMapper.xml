@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.SpringBootEnglishWordApp.Mapper.Cet6WordMapper">
+    <select id="getCet6Words" resultType="com.cn.SpringBootEnglishWordApp.Pojo.Cet6Word">
+        select * from cet6 order by word limit #{pageSize} offset #{offset};;
+    </select>
+     <select id="getCet6WordNums" resultType="Integer">
+        select count(*) from cet6 ;
+    </select>
+    <select id="selectCet6Words" resultType="com.cn.SpringBootEnglishWordApp.Pojo.Cet6Word">
+        select * from cet6 where word like #{word};
+    </select>
+     <select id="selectAnyCet6Words" resultType="com.cn.SpringBootEnglishWordApp.Pojo.Cet6Word">
+        select * from cet4 where word like '${word}%';
+    </select>
+</mapper>

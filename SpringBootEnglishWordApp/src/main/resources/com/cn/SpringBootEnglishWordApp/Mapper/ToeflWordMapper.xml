@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cn.SpringBootEnglishWordApp.Mapper.ToeflWordMapper">
+    <select id="getToeflWords" resultType="com.cn.SpringBootEnglishWordApp.Pojo.ToeflWord">
+        select * from toefl order by word limit #{pageSize} offset #{offset};;
+    </select>
+     <select id="getToeflWordNums" resultType="Integer">
+        select count(*) from toefl ;
+    </select>
+    <select id="selectToeflWords" resultType="com.cn.SpringBootEnglishWordApp.Pojo.ToeflWord">
+        select * from toefl where word like #{word};
+    </select>
+     <select id="selectAnyToeflWords" resultType="com.cn.SpringBootEnglishWordApp.Pojo.ToeflWord">
+        select * from toefl where word like '${word}%';
+    </select>
+</mapper>
